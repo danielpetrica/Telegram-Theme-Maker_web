@@ -58,7 +58,7 @@
               <?php
               include 'theme_array_model.php';
               foreach ($arr_en as $key => $value) {
-                    echo "\n<tr>\n<td>select your ".$value['name']."</td>\n<td><input  type=\"color\"  name=\"".$value['name']."\" value=\"".$value['color']."\"></td>\n <td>".$value['desc']."</td>\n</tr>\n";
+                    echo htmlspecialchars("\n<tr>\n<td>select your ".$value['name']."</td>\n<td><input  type=\"color\"  name=\"".$value['name']."\" value=\"".$value['color']."\"></td>\n <td>".$value['desc']."</td>\n</tr>\n", ENT_QUOTES);
               };
                ?>
           <input type="submit">
