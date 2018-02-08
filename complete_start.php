@@ -91,7 +91,7 @@
 												Please use the following inputs to insert your chosen colors, and photo to create a nice theme.
  										</h5>
 										<div class="inputs">
-											<form  method="post" action="app/action_page.php">
+											<form  method="post" action="app/action_expert.php">
 
 											<div class="row">
 												<div class="col-lg-6 col-sm-5">

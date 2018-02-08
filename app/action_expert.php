@@ -31,9 +31,9 @@
 
     /*open the theme, if a theme with the same name exists
     it cancel it and write the new theme created with expert_theme.php*/
-    $fh = fopen($dir, 'w');
-    fwrite($fh, $expert_theme);
-    fclose($fh);
+    //$fh = fopen($dir, 'w');
+    file_put_contents($link, $expert_theme);
+    //fclose($fh);
     echo "<br>";
 
     //That's the file name the user saves on desktop.
