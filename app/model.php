@@ -12,7 +12,8 @@
 //                                                                                              //
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-$model_theme="COLOR_GRAY: $color_gray;\r\n
+$model_theme="// Telegram theme created with http:thememaker.site  //\r
+COLOR_GRAY: $color_gray;\r\n
 COLOR_DARK: $color_dark;\r\n "./*Main color (dark one)*/"
 COLOR_GREEN_DARK: $color_green_dark;\r\n                      "./* Accent color*/"
 

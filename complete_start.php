@@ -8,7 +8,7 @@
       <link rel="apple-touch-icon" href="./assets/img/apple-icon.png">
       <link rel="icon" href="./assets/img/favicon.png">
       <title>
-          Telegram Theme Maker Simple Version
+          Telegram Theme Maker Complete Version
       </title>
       <!--     Fonts and icons     -->
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -66,10 +66,10 @@
                 <div class="col-md-8 ml-auto mr-auto">
                     <div class="brand">
                         <h1>
-													Theme Maker Simple Version
+													Theme Maker Complete Version
 												</h1>
                         <h3>
-													Create a theme for <b> Telegram Desktop </b> in 2 minutes <i class="material-icons">timer</i>
+													Create a wonderfull fully personalizedd theme for <b> Telegram Desktop </b>
 												</h3>
                     </div>
                 </div>
@@ -83,21 +83,21 @@
 
             <div class="section text-center">
 							<div class="row">
-	                <div class="col-md-9 ml-auto mr-auto">
+	                <div class="col-md-12 ml-auto mr-auto">
 	                    <h2 class="title">
-												Welcome to Telegram Theme Maker <br> The Simple version
+												Welcome to Telegram Theme Maker <br> The Complete version
 											</h2>
 											<h5 class="description">
 												Please use the following inputs to insert your chosen colors, and photo to create a nice theme.
  										</h5>
 										<div class="inputs">
 											<form  method="post" action="app/action_page.php">
-											
+
 											<div class="row">
 												<div class="col-lg-6 col-sm-5">
 													<p class="text-info" >Select your theme name, please no space or special characters (use _ for spaces):</p>
 												</div>
-												<div class="col-lg-2 col-sm-2">
+												<div class="col-lg-6 col-sm-2">
 													<input  type="text"  name="name" value="type_a_name" class="form-control">
 												</div>
 											</div>
@@ -112,128 +112,37 @@
 													  <input  type="link" name="img_input_image" value="https://static.pexels.com/photos/8703/sky-space-moon-outdoors.jpg"  class="form-control">
 												</div>
 											</div>
-											<hr class="col-lg-11 col-sm-7">
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-primary">Select your Main color:</p>
+											<?php
+											include './app/theme_array_model.php';
+											foreach ($arr_en as $key => $value) {
+														if (!( $key % 2 == 0)) {
+															$text_string="text-info";
+														} else {
+															$text_string="text-primary";
+														}
 
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="color_dark" value="#999999">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-info">Select your Secondary color:</p>
+														echo
+															"\n<div class=\"row \">
+																<div class=\"col-lg-6 col-sm-5\">
+																	<p class=\"$text_string\" > Select your theme, ".$value['name']."<br />  Description: ".$value['desc']." </p>
 
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="color_gray" value="#2f2f2f">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-primary" data-toggle="tooltip" data-placement="bottom" title="" data-container="body" data-original-title="(Active button background (+ checkboxes background)
-							            Active input field line color (normal)
-							            Currently selected button background">  Select your third color</p>
+																</div>
+																<div class=\"col-lg-2 col-sm-2\">
+																	<input  type=\"color\"  name=\"".$value['name']."\" value=\"".$value['color']."\" class=\"form-control\">
+																</div>
+															</div>";
+											};
+											 ?>
 
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="color_green_dark" value="#2f2f2f">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-info">Select a color for Primary button background color (and active chat) - Press and hold:</p>
 
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="color_green_ripple_active" value="#15cd7d">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-primary">
-														 Select a color for (Icons color on hover) :
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="color_green_light" value="#025618">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-info">
-														  Select your Text Color:
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="textcolor" value="#ffffff">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-primary">
-														 Select the color for outgoing Messages bubble
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="msgOutBg" value="#09f74b">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-info">
-														 Select the color for incoming Messages bubble
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="msgInBg" value="#09eaf7">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-primary">
-														 Select the color for incoming files bubble
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"  name="msgFile1Bg" value="#dbd908">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-info">
-														 Select the backgound for Active Chat
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"   name="dialogsBgActive" value="#ffb800">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-6 col-sm-5">
-													<p class="text-primary">
-														 Select the backgound for The main menu
-													</p>
-
-												</div>
-												<div class="col-lg-3 col-sm-4">
-													  <input  type="color"  class="form-control"   name="menuBg" value="#ffb800">
-												</div>
-											</div>
 											<div class="row">
 												<div class="col-lg-12 col-sm-4">
 													  <button type="submit" class="btn btn-black btn-raised" name="button"  > <i class="fa fa-cogs"></i> Create It</button>
 												</div>
 
 											</div>
+
+
 										</div>
 										</form>
 	                </div>
